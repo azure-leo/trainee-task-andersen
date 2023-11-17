@@ -76,14 +76,23 @@
             <h1>There are messages</h1>
         </div>
             
-        <div>
-            <h2>Sent Messages</h2>
+        <div class="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
             @foreach ($messages as $message)
-                <p>
-                    <strong>{{ $message->name }}</strong>
-                    ({{ $message->email }}) - {{ $message->created_at }}<br>
-                    {{ $message->message }}
-                </p>
+                <div>
+                    <div>
+                        Name: <strong>{{ $message->name }}</strong>
+                    </div>
+                    <div>
+                        Email: ({{ $message->email }})
+                    </div>
+                    <div>
+                        Created at: {{ $message->created_at }}
+                    </div>
+                    <div>
+                        Message: {{ $message->message }}
+                    </div>                    
+                    <br>
+                </div>
             @endforeach
         </div>
         @endif
